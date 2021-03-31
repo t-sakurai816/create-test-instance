@@ -1,3 +1,6 @@
+# Created by saku
+.DS_Store
+terraform.tfvars
 # Local .terraform directories
 **/.terraform/*
 
