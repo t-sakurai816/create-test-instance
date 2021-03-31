@@ -33,6 +33,11 @@ resource "aws_instance" "test_instance" {
   key_name               = var.key_name
   availability_zone      = "ap-northeast-1d"
 
+  root_block_device {
+    volume_type = "standard"
+    volume_size = "30"
+  }
+
   tags = {
     Name = var.instance_name
   }
@@ -40,6 +45,6 @@ resource "aws_instance" "test_instance" {
 
 # EIP
 resource "aws_eip" "test_instance" {
-    instance = aws_instance.test_instance.id
-    vpc = true
+  instance = aws_instance.test_instance.id
+  vpc      = true
 }
