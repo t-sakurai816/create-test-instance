@@ -25,7 +25,7 @@ data "aws_ami" "recent_amazon_linux_2" { #AmazonLinux2の最新AMIを取得
   }
 }
 
-resource "aws_instance" "test" {
+resource "aws_instance" "test_instance" {
   ami                    = data.aws_ami.recent_amazon_linux_2.image_id # latest-AmazonLinux2
   instance_type          = "t2.micro"
   vpc_security_group_ids = [var.vpc_security_group_ids]
@@ -36,4 +36,10 @@ resource "aws_instance" "test" {
   tags = {
     Name = var.instance_name
   }
+}
+
+# EIP
+resource "aws_eip" "test_instance" {
+    instance = aws_instance.test_instance.id
+    vpc = true
 }
