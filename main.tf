@@ -3,6 +3,7 @@ variable "aws_secret_key" {}
 variable "vpc_security_group_ids" {}
 variable "subnet_id" {}
 variable "key_name" {}
+variable "instance_name" {}
 
 provider "aws" {
   region     = "ap-northeast-1"
@@ -33,6 +34,6 @@ resource "aws_instance" "test" {
   availability_zone      = "ap-northeast-1d"
 
   tags = {
-    Name = "TEST-Terraform"
+    Name = var.instance_name
   }
 }
