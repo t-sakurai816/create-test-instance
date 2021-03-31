@@ -48,3 +48,8 @@ resource "aws_eip" "test_instance" {
   instance = aws_instance.test_instance.id
   vpc      = true
 }
+
+#インスタンスのEIPを出力
+output "instance_ip" {
+  value = aws_eip.test_instance.public_ip
+}
