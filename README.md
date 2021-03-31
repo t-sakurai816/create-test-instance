@@ -1,21 +1,8 @@
 # create-test-instance-for-town
 
 TOWNで使用するテストインスタンスをサクッと建ててサクッとぶっ壊すためのものです。長期使用は（経験不足のため）考えていません。  
-
+`tfenv`を利用しています。brewでインストールしてください
 ## 使い方
-
-###  tfenvのインストール
-
-```
-$ brew install tfenv
-$ tfenv --version
-```
-
-### git clone
-
-```
-$ git clone https://github.com/t-sakurai816/create-test-instance-for-town
-```
 
 多分.terraform-versionでバージョン固定されているはずなので下記コマンドで有効にする
 
