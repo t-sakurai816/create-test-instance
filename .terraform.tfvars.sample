@@ -1,0 +1,7 @@
+# これは環境変数ファイル
+aws_access_key = "XXXXXXXXXX"
+aws_secret_key = "XXXXXXXXXXXXXXXXXXXXX"
+
+vpc_security_group_ids = "sg-XXXXXXX"
+subnet_id              = "subnet-XXXXXXXXXX"
+key_name               = "kousoku"
