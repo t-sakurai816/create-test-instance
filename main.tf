@@ -32,7 +32,7 @@ resource "aws_instance" "test_instance" {
   subnet_id               = var.subnet_id
   key_name                = var.key_name
   availability_zone       = "ap-northeast-1d"
-  disable_api_termination = true
+  # disable_api_termination = true
 
   root_block_device {
     volume_type = "standard"
