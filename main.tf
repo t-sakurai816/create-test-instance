@@ -26,12 +26,12 @@ data "aws_ami" "recent_amazon_linux_2" { #AmazonLinux2の最新AMIを取得
 }
 
 resource "aws_instance" "test_instance" {
-  ami                     = data.aws_ami.recent_amazon_linux_2.image_id # latest-AmazonLinux2
-  instance_type           = "t2.micro"
-  vpc_security_group_ids  = [var.vpc_security_group_ids]
-  subnet_id               = var.subnet_id
-  key_name                = var.key_name
-  availability_zone       = "ap-northeast-1d"
+  ami                    = data.aws_ami.recent_amazon_linux_2.image_id # latest-AmazonLinux2
+  instance_type          = "t2.micro"
+  vpc_security_group_ids = [var.vpc_security_group_ids]
+  subnet_id              = var.subnet_id
+  key_name               = var.key_name
+  availability_zone      = "ap-northeast-1d"
   # disable_api_termination = true
 
   root_block_device {
@@ -42,6 +42,8 @@ resource "aws_instance" "test_instance" {
   tags = {
     Name = var.instance_name
   }
+
+  user_data = file("./user_data.sh")
 }
 
 # EIP
