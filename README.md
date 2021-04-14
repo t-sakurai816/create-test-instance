@@ -1,4 +1,4 @@
-# create-test-instance-for-town
+# create-test-instance
 
 テストインスタンスをサクッと建ててサクッとぶっ壊すためのものです。長期使用は（経験不足のため）考えていません。  
 `tfenv`を利用しています。brewでインストールしてください
@@ -46,7 +46,13 @@ EIPが作成され、作成したEC2インスタンスに適用されます
 $ tfenv install
 ```
 
-`.terraform.tfvars.sample`をコピーして`.terraform.tfvars`という名前にして環境変数を設定します。
+初期化する
+
+```
+$ terraform init
+```
+
+`.terraform.tfvars.sample`をコピーして`terraform.tfvars`という名前にして環境変数を設定します。
 
 ### 動作確認
 
